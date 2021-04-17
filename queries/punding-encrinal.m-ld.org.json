@@ -1,0 +1,27 @@
+{
+  "Test": [
+    "SELECT * WHERE { ?s <http://punding-encrinal.m-ld.org/#text> ?t . }"
+  ],
+  "Load all messages": [
+    "SELECT ?b70441 ?b70442 ?b70443 ?b70444 WHERE {",
+    " { SELECT DISTINCT (?id AS ?b70441) WHERE {",
+    "   ?id <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://punding-encrinal.m-ld.org/#Message>.",
+    " } }",
+    " ?b70441 ?b70442 ?b70443.",
+    " OPTIONAL { ?b70443 <http://json-rql.org/#item> ?b70444. }",
+    "}"
+  ],
+  "Load a message list text": [
+    "SELECT ?b70445 ?b70446 ?b70447 WHERE {",
+    " <http://punding-encrinal.m-ld.org/i6b3a4e> ?b70445 ?b70446.",
+    " OPTIONAL { ?b70446 <http://json-rql.org/#item> ?b70447. }",
+    "}"
+  ],
+  "Load the tail of a list": [
+    "SELECT ?slot ?property ?index WHERE {",
+    " <http://punding-encrinal.m-ld.org/d84952e9_text> ?property ?slot.",
+    " ?slot <http://json-rql.org/#index> ?index.",
+    " FILTER(?index > 10 )",
+    "}"
+  ]
+}

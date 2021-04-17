@@ -1,0 +1,13 @@
+{
+  "name": "m-ld-quadstore-query",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "jsonld-context-parser": "^2.1.2",
+    "marky": "^1.2.1",
+    "memdown": "^6.0.0",
+    "quadstore": "^9.1.0",
+    "quadstore-comunica": "^1.1.0"
+  }
+}
