@@ -40,10 +40,10 @@ const queries = require(`./queries/${domain}.json`);
   await qs.open();
   for (let [name, query] of Object.entries(queries)) {
     query = query.join('');
-    console.log(`${name}\n${query}`);
     mark(name);
-    await qs.sparql(query);
+    const { items, type } = await qs.sparql(query);
     stop(name);
+    console.log(`${name}\n${query}\nReturned ${items.length} ${type}\n`);
   }
-  console.log(timings().map(t => `${t.name}: ${t.duration.toFixed(0)}ms`));
+  timings().forEach(t => console.log(`${t.name}: ${t.duration.toFixed(0)}ms`));
 })();
